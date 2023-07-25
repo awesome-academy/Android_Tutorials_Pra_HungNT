@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Implicit Intents</string>
+    <!--text-->
+    <string name="text_web">Nhập link web stite</string>
+    <string name="text_location">Nhập vị trí</string>
+    <string name="text_sharetext">Nhập Văn bản</string>
+
+    <!--button-->
+    <string name="button_web">Open Web</string>
+    <string name="button_location">Open Location</string>
+    <string name="button_sharetext">Share This Text</string>
+</resources>
+
+
+
