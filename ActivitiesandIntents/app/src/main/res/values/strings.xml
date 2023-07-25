@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Activities and Intents</string>
+
+    <!--text-->
+    <string name="send">Send</string>
+    <string name="reply">Reply</string>
+    <string name="message">This is the message</string>
+    <string name="send_to_activity">send to activity 4</string>
+    <string name="message_received">Message Received</string>
+</resources>
+
