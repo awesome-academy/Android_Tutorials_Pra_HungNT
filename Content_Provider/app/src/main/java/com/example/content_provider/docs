@@ -1,0 +1,50 @@
+Trên nền tảng Android, một ứng dụng không thể truy cập trực tiếp (đọc / ghi) dữ liệu của ứng dụng khác
+1. Khái niệm
+- Content Providers là một tập dữ liệu được bao bọc trong một custom API để có thể cho phép đọc và ghi
+-  Nó hoạt động như một interfacae cho phép bạn lưu trữ và truy xuất dữ liệu từ một nguồn lưu trữ dữ liệu
+- Cho phép bạn chia sẻ dữ liệu giữa các ứng dụng khác nhau
+
+2. Phân loại
+- Native content providers: Chúng cung cấp quyền truy cập vào cơ sở dữ liệu tích hợp có sẵn,
+ chẳng hạn như Contacts, Media player, Message và các cơ sở dữ liệu gốc khác.
+ Bạn cần cấp các quyền cần thiết cho ứng dụng của mình trước khi sử dụng nhà cung cấp nội dung gốc
+
+- Custom content providers: 1 dạng custom cở sở dữ liệu tự tạo bởi nhà phát triển
+  để phù hợp với các yêu cầu của ứng dụng.
+
+3. Content Resolver
+- Để nhận dữ liệu và tương tác với Content Provider, một ứng dụng sử dụng đối tượng đó là Content Resolver để gửi yêu cầu tới Content Provider
+- Đối tượng ContentResolver cung cấp các phương thức query (), insert (), update () và delete () để truy cập dữ liệu từ Content Provider
+- Mỗi request bao gồm một URI và một truy vấn SQL, và response trả về sẽ là một đối tượng Cursor
+   minh họa  : @drawable/img_1.png
+
+4. Kiến  trúc Content Providers
+ minh họa  : @drawable/img.png
+ - nẳm giữa, tách dữ liệu và giao diện
+
+4.1 Data and Open Helper
+- Dữ liệu được sử dụng với các Content Providers thường được lưu trữ trong cơ sở dữ liệu SQLite và API của Content Providers
+
+4.2 Contract
+- Contract là một lớp public hiển thị thông tin quan trọng về Content Providers cho các ứng dụng khác. Điều này thường bao gồm các lược đồ URI, các hằng số quan trọng và cấu trúc của dữ liệu sẽ được trả về.
+- Ví dụ: đối với ứng dụng từ điển món ăn, Contract có thể hiển thị tên của các cột chứa giá và tên của sản phẩm và URI để truy xuất một món ăn theo tên hoặc ID.
+
+
+4.3 Content Provider
+- Content Provider kế thừa lớp ContentProvider và cung cấp các phương thức query (), insert (), update () và delete () để truy cập dữ liệu.
+- Ngoài ra, nó cung cấp một public interface và secure interface cho dữ liệu, để các ứng dụng khác có thể truy cập dữ liệu với các permissions thích hợp
+
+4.4 Content Resolver
+- Content Providers luôn được truy cập thông qua trình Content Resolver
+- Content Resolver như một lớp trợ giúp quản lý tất cả các chi tiết kết nối với một Content Provider
+- ContentResolver cung cấp cho bạn các phương thức query (), insert (), update () và delete () để truy cập dữ liệu của Content Provider
+
+
+5. Implementing a Content Provider
+- Data (dữ liệu) trong cơ sở dữ liệu
+- Một phương thức để truy cập lưu trữ dữ liệu, ví dụ, thông qua một trình trợ giúp ( open helper) cho một cơ sở dữ liệu
+- Định nghĩa, khai báo Content Provider của bạn trong Tệp Android Manifest để cung cấp cho ứng dụng của riêng bạn và các ứng dụng khác
+- Phân lớp (kế thừa) lớp ContentProvider thực hiện các phương thức query (), insert (), delete (), update (), count () và getType ().
+- Trình Content Resolver để truy cập vào Content Provider bằng các phương thức và truy vấn thích hợp
+
+- link VDu triển khai: https://viblo.asia/p/android-content-provider-p2-implement-chia-se-du-lieu-giua-2-hoac-nhieu-ung-dung-V3m5WoQb5O7
