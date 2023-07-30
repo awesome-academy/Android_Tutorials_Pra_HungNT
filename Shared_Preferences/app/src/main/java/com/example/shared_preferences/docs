@@ -1,0 +1,36 @@
+1. Các khái niệm cơ bản
+
+- Shared Preferences là nơi bạn có thể lưu trữ các thông tin dưới dạng key-value
+-Không quan trọng trong context nào (Activity, Fragment, Application, ...) mà nó được gọi,
+ nó luôn luôn trả về instance giống nhau khi bạn gọi method trên với tên giống nhau.
+ Điều này đảm bảo rằng bạn luôn luôn nhận được dữ liệu mới nhất được lưu.
+
+2. Cấu trúc bên trong của Shared Preferences
+
+- Hash-Map<tương tự như bộ nhớ in-Memory>
+- 1 file XML <Disk Storage>
+ <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+ <map>
+     <string name="KEY">value</string>
+ </map>
+
+3. Lấy dữ liệu
+val value = pref.getString(key, null)
+
+4. Lưu trữ dữ liệu thông qua commit() - cần xác nhận kết quả trả về
+Lưu một giá trị string vào share preferences sử dụng commit()
+val result = pref.edit().putString(key, "value").commit()
+
+5. Lưu giá trị thông qua apply() - không cần xác nhận kết quả trả về
+Lưu một giá trị string vào shared preferences bằng apply
+pref.edit().putString(key, "value").apply()
+
+6.Các thao tác khác
+Ngoại trừ việc put và get, shared preferences còn cung cấp các thao tác sau:
+-  Kiểm tra xem một key có tồn tại hay không
+-  Lắng nghe việc thay đổi của shared preferences thông qua listener
+-  Đọc toàn bộ các entries thành map
+-  Xóa bỏ một entry
+-  Xóa bỏ toàn bộ các entries (Clear all)
+-  Shared preferences phạm vi ứng dụng được lưu tại đường dẫn:
+data/data/<YOUR_APP_ID>/shared_prefs/<SHARED_PREF_NAME>.xml
