@@ -3,18 +3,12 @@ package com.example.activitiesandintents
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.activitiesandintents.databinding.Activity3Binding
-
+import com.example.databinding.Activity3Binding
 
 class Activity_3 : AppCompatActivity() {
 
     private val binding: Activity3Binding by lazy {
         Activity3Binding.inflate(layoutInflater)
-    }
-
-    companion object {
-        const val SEND_MESSAGE_KEY = "send_message_activity_4"
-        const val REPLY_MESSAGE_KEY = "reply_message"
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +29,10 @@ class Activity_3 : AppCompatActivity() {
             intent.putExtra(SEND_MESSAGE_KEY, send)
             startActivity(intent)
         }
+    }
+    companion object {
+        const val SEND_MESSAGE_KEY = "send_message_activity_4"
+        const val REPLY_MESSAGE_KEY = "reply_message"
     }
 }
 

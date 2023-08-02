@@ -3,7 +3,8 @@ package com.example.activitiesandintents
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.activitiesandintents.databinding.Activity4Binding
+import com.example.databinding.Activity4Binding
+
 
 
 class Activity_4 : AppCompatActivity() {
@@ -11,10 +12,6 @@ class Activity_4 : AppCompatActivity() {
         Activity4Binding.inflate(layoutInflater)
     }
 
-    companion object {
-        const val SEND_MESSAGE_KEY = "send_message_activity_4"
-        const val REPLY_MESSAGE_KEY = "reply_message"
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -35,6 +32,10 @@ class Activity_4 : AppCompatActivity() {
             intent.putExtra(REPLY_MESSAGE_KEY, reply)
             startActivity(intent)
         }
+    }
+    companion object {
+        const val SEND_MESSAGE_KEY = "send_message_activity_4"
+        const val REPLY_MESSAGE_KEY = "reply_message"
     }
 }
 
