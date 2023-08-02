@@ -12,5 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Activities and Intents"
+
+rootProject.name = "Implicit Intents"
 include ':app'
+
+
+
