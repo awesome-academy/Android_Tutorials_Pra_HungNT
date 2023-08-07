@@ -18,3 +18,4 @@ include ':app'
 
 
 include ':fragment'
+include ':fragment_lifecycle_and_communications'
