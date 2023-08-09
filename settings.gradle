@@ -19,3 +19,4 @@ include ':app'
 
 include ':fragment'
 include ':fragment_lifecycle_and_communications'
+include ':drawables_styles_and_themes'
