@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Notifiaction</string>
+    <string name="button_Notify">Notify Me!</string>
+    <string name="button_update">Update Me!</string>
+    <string name="button_cancel">Cancel Me!</string>
+
+    <string name="title_update_noti">Update Notification</string>
+    <string name= "big_content_title_update">Notification Updated!</string>
+    <string name="name_notificationchannel">Mascot Notification</string>
+    <string name="description_notificationchannel">Notification from Mascot</string>
+    <string name="content_title_notificationbuilder">You are been notified!</string>
+    <string name="content_text_notificationbuilder">This is your notification text.</string>
+</resources>
